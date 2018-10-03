@@ -7,7 +7,7 @@
 <!-- 親レイアウトに'menubar'というyieldがあれば、そこにはめ込まれて表示される-->
 @section('menubar')
     @parent
-    インデックスページ
+    インデックスページ!
 @endsection
 
 @section('content')
