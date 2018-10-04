@@ -11,6 +11,7 @@ class HelloController extends Controller{
 
     //index
     //branch test2
+    //push test
     public function index(Request $request) {
 
         $items = DB::select('select * from people');
