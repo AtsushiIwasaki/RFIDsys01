@@ -11,7 +11,11 @@
     <table>
         <form action="/hello/edit" method="post">
             {{ csrf_field() }}
-            <input type="hidden" name="id" value="{{$form->id}}">
+            <!-- <input type="hidden" name="id" value="{{$form->id}}"> -->
+            <tr>
+                <th>id: </th>
+                <td><input type="text" name="id" disabled="disabled" value="{{$form->id}}"></td>
+            </tr>
             <tr>
                 <th>name: </th>
                 <td><input type="text" name="name" value="{{$form->name}}"</td>

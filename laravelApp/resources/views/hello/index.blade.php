@@ -7,18 +7,20 @@
 <!-- 親レイアウトに'menubar'というyieldがあれば、そこにはめ込まれて表示される-->
 @section('menubar')
     @parent
-    インデックスページ!
+    インデックスページ
 @endsection
 
 @section('content')
     <table>
         <tr>
+            <th>id</th>
             <th>Name</th>
             <th>Mail</th>
             <th>Age</th>
         </tr>
         @foreach ($people as $item)
             <tr>
+                <td>{{$item->id}}</td>
                 <td>{{$item->name}}</td>
                 <td>{{$item->mail}}</td>
                 <td>{{$item->age}}</td>
