@@ -53,4 +53,19 @@ class Person extends Model
         return $query->where('age', '<=', $n);
     }
 
+    //1対1リレーション
+    public function board()
+    {
+        //リレーションを定義する hasOneは1対1の関係で関連付けられているもの
+        return $this->hasOne('App\Board');
+    }
+
+    //1対多リレーション
+    public function boards()
+    {
+        return $this->hasMany('App\Board');
+    }
+
+
+
 }
