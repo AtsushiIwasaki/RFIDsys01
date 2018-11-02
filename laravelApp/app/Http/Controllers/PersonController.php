@@ -8,10 +8,22 @@ use Illuminate\Http\Request;
 
 class PersonController extends Controller
 {
+//    public function index(Request $request)
+//    {
+//        $items = Person::all();
+//        return view('person.index', ['items' => $items]);
+//    }
+
     public function index(Request $request)
     {
-        $items = Person::all();
-        return view('person.index', ['items' => $items]);
+        //boardsを持つもの
+        $hasItems = Person::has('boards')->get();
+
+        //boardsを持たないもの
+        $noItems = Person::doesntHave('boards')->get();
+
+        $param = ['hasItems' => $hasItems, 'noItems' => $noItems];
+        return view('person.index', $param);
     }
 
     // /find にGETアクセスしたときの処理
