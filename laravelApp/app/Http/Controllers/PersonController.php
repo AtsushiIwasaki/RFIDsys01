@@ -14,7 +14,7 @@ class PersonController extends Controller
         return view('person.index', ['items' => $items]);
     }
 
-    // /find にGEGTアクセスしたときの処理
+    // /find にGETアクセスしたときの処理
     public function find(Request $request)
     {
         return view('person.find', ['input' => '']);
